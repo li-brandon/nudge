@@ -1,8 +1,13 @@
 # nudge
 
-> AI-powered coding mentor for OpenCode that guides with questions, not answers.
+> AI-powered coding mentor that guides with questions, not answers.
 
 Based on the **OwnYourCode** methodology - the Learn agent helps you become a better developer by teaching through Socratic dialogue, not code generation.
+
+## Supported Platforms
+
+- **OpenCode** - Installs to `~/.config/opencode/agents/learn.md`
+- **GitHub Copilot** - Installs to `.github/agents/learn.agent.md` in your project
 
 ## Philosophy
 
@@ -20,37 +25,55 @@ Unlike traditional AI coding assistants that write code for you, the Learn agent
 ## Installation
 
 ```bash
-bunx opencode-learn install
+bunx nudge install
 ```
 
-### Options
+This will prompt you to choose which platform(s) to install for.
+
+### Platform-Specific Installation
 
 ```bash
-# Interactive installation (default)
-bunx opencode-learn install
+# Interactive (prompts for platform selection)
+bunx nudge install
 
-# Non-interactive with defaults
-bunx opencode-learn install --no-tui
+# OpenCode only
+bunx nudge install --opencode
 
-# Specify model and color
-bunx opencode-learn install --model anthropic/claude-sonnet-4 --color "#14B8A6"
+# GitHub Copilot only
+bunx nudge install --copilot
+
+# Both platforms
+bunx nudge install --all
+```
+
+### Non-Interactive Installation
+
+```bash
+# Install with defaults (no prompts)
+bunx nudge install --no-tui
+
+# Install with specific options (OpenCode only)
+bunx nudge install --opencode --model anthropic/claude-sonnet-4 --color "#14B8A6"
 ```
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `bunx opencode-learn install` | Install the Learn agent |
-| `bunx opencode-learn uninstall` | Remove the Learn agent |
-| `bunx opencode-learn update` | Update to the latest version |
+| `bunx nudge install` | Install the Learn agent |
+| `bunx nudge uninstall` | Remove the Learn agent from all platforms |
+| `bunx nudge update` | Update to the latest version |
 
 ### Install Options
 
 | Option | Description |
 |--------|-------------|
+| `--opencode` | Install for OpenCode only |
+| `--copilot` | Install for GitHub Copilot only |
+| `--all` | Install for all platforms without prompting |
 | `--no-tui` | Non-interactive mode with defaults |
-| `--model <model>` | Specify model (e.g., `anthropic/claude-sonnet-4`) |
-| `--color <hex>` | Specify color (e.g., `#14B8A6`) |
+| `--model <model>` | Specify model for OpenCode (e.g., `anthropic/claude-sonnet-4`) |
+| `--color <hex>` | Specify color for OpenCode (e.g., `#14B8A6`) |
 
 ### Uninstall Options
 
@@ -62,7 +85,7 @@ bunx opencode-learn install --model anthropic/claude-sonnet-4 --color "#14B8A6"
 
 | Option | Description |
 |--------|-------------|
-| `--preserve-config` | Keep existing model and color settings |
+| `--preserve-config` | Keep existing model and color settings (OpenCode only) |
 
 ## The 4 Non-Negotiable Protocols
 
@@ -76,7 +99,7 @@ bunx opencode-learn install --model anthropic/claude-sonnet-4 --color "#14B8A6"
 **We verify, never guess.** The agent checks documentation before answering and teaches you to do the same.
 
 ### Protocol D: Stuck Framework
-**Systematic debugging guidance.** When stuck, the agent guides you through: READ → ISOLATE → DOCS → HYPOTHESIZE → VERIFY.
+**Systematic debugging guidance.** When stuck, the agent guides you through: READ -> ISOLATE -> DOCS -> HYPOTHESIZE -> VERIFY.
 
 ## The 6 Mentorship Gates
 
@@ -97,7 +120,7 @@ Before any task is complete, the Learn agent guides you through:
 - **Concept Explanation** - Learn new concepts through analogies
 - **Documentation Summary** - Get plain-language summaries of docs
 
-## Color Options
+## Color Options (OpenCode Only)
 
 The Learn agent comes with several color presets:
 
@@ -110,16 +133,25 @@ The Learn agent comes with several color presets:
 
 ## Requirements
 
-- [OpenCode](https://opencode.ai) installed and configured
 - [Bun](https://bun.sh) runtime (for installation)
+- One of the following:
+  - [OpenCode](https://opencode.ai) installed and configured
+  - [GitHub Copilot](https://github.com/features/copilot) subscription
 
 ## Manual Installation
 
-If you prefer to install manually:
+### OpenCode
 
-1. Download `learn.md` from this repository
+1. Download `agents/learn.md` from this repository
 2. Place it in `~/.config/opencode/agents/learn.md`
 3. Start OpenCode and select the "Learn" agent
+
+### GitHub Copilot
+
+1. Download `agents/learn.copilot.md` from this repository
+2. Place it in your project's `.github/agents/learn.agent.md`
+3. Commit and push to your repository
+4. The Learn agent will appear in the Copilot agent dropdown
 
 ## Contributing
 
