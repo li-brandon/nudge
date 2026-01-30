@@ -177,3 +177,5 @@ MIT - see [LICENSE](LICENSE) for details.
 ## Acknowledgments
 
 Based on the **OwnYourCode** methodology for building better engineers through mentorship rather than code generation.
+
+https://github.com/DanielPodolsky/ownyourcode
