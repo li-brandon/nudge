@@ -25,7 +25,7 @@ Unlike traditional AI coding assistants that write code for you, the Learn agent
 ## Installation
 
 ```bash
-bunx nudge install
+bunx @li-brandon/nudge install
 ```
 
 This will prompt you to choose which platform(s) to install for.
@@ -34,35 +34,35 @@ This will prompt you to choose which platform(s) to install for.
 
 ```bash
 # Interactive (prompts for platform selection)
-bunx nudge install
+bunx @li-brandon/nudge install
 
 # OpenCode only
-bunx nudge install --opencode
+bunx @li-brandon/nudge install --opencode
 
 # GitHub Copilot only
-bunx nudge install --copilot
+bunx @li-brandon/nudge install --copilot
 
 # Both platforms
-bunx nudge install --all
+bunx @li-brandon/nudge install --all
 ```
 
 ### Non-Interactive Installation
 
 ```bash
 # Install with defaults (no prompts)
-bunx nudge install --no-tui
+bunx @li-brandon/nudge install --no-tui
 
 # Install with specific options (OpenCode only)
-bunx nudge install --opencode --model anthropic/claude-sonnet-4 --color "#14B8A6"
+bunx @li-brandon/nudge install --opencode --model anthropic/claude-sonnet-4 --color "#14B8A6"
 ```
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `bunx nudge install` | Install the Learn agent |
-| `bunx nudge uninstall` | Remove the Learn agent from all platforms |
-| `bunx nudge update` | Update to the latest version |
+| `bunx @li-brandon/nudge install` | Install the Learn agent |
+| `bunx @li-brandon/nudge uninstall` | Remove the Learn agent from all platforms |
+| `bunx @li-brandon/nudge update` | Update to the latest version |
 
 ### Install Options
 
