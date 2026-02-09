@@ -2,7 +2,7 @@
 
 > AI-powered coding mentor that guides with questions, not answers.
 
-Based on the **OwnYourCode** methodology - the Learn agent helps you become a better developer by teaching through Socratic dialogue, not code generation.
+The Learn agent helps you become a better developer by teaching through Socratic dialogue, not code generation.
 
 ## Supported Platforms
 
